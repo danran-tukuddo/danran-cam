@@ -16,7 +16,24 @@
   // start local video
   function startVideo() {
     console.log("startVideo");
-    navigator.mediaDevices.getUserMedia({video:{width:640,height:480}, audio: false})
+    const option = {
+               "audio": false,
+               "video": {
+                "mandatory": {
+                 "maxWidth": 1920,
+                 "maxHeight": 1080
+                },
+                "optional": [
+                 {
+                  "minWidth": 1920
+                 },
+                 {
+                  "minHeight": 1080
+                 }
+                ]
+               }
+              };
+    navigator.mediaDevices.getUserMedia(option)
     .then(function (stream) { // success
       console.log("success");
       localStream = stream;
