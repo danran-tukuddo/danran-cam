@@ -39,7 +39,7 @@ class App{
     //this.mainWindow.loadURL(config.FIREBASE_APP_URL);
     //this.mainWindow.loadURL("file://" + __dirname + "/public/app.html");
 
-    this.mainWindow.loadURL("chrome://settings/content#media-stream-mic");
+    this.mainWindow.loadURL("chrome://settings");
     this.mainWindow.on('closed', function(){
       console.log("closed");
       electron.session.defaultSession.clearCache(() => {});
