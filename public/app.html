@@ -15,8 +15,10 @@
 
   // start local video
   function startVideo() {
+    console.log("startVideo");
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then(function (stream) { // success
+      console.log("success");
       localStream = stream;
       localVideo.src = window.URL.createObjectURL(localStream);
       localVideo.onloadedmetadata = function(e) {
