@@ -32,14 +32,7 @@ class App{
     //ブラウザ(Chromium)の起動, 初期画面のロード
     this.mainWindow = new electron.BrowserWindow({width: 800, height: 600});
     //this.mainWindow.maximize();
-    this.mainWindow.loadURL(config.FIREBASE_URL);
-    this.mainWindow.on('closed', this.windowClosed);
-  }
-
-  //Windowを閉じた時
-  windowClosed(){
-    console.log("closed");
-    this.mainWindow = null;
+    this.mainWindow.loadURL(config.UV4L_SERVER_URL);
   }
 }
 
