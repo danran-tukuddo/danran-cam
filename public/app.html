@@ -16,7 +16,7 @@
   // start local video
   function startVideo() {
     console.log("startVideo");
-    navigator.mediaDevices.getUserMedia({video: true, audio: false})
+    navigator.mediaDevices.getUserMedia({video:{width:640,height:480}, audio: false})
     .then(function (stream) { // success
       console.log("success");
       localStream = stream;
