@@ -21,6 +21,9 @@ class App{
   //全てのWindowが閉じられた時
   windowAllClosed(){
     console.log("windowAllClosed");
+    //キャッシュ クリア
+    electron.session.defaultSession.clearCache(() => {});
+
     if (process.platform != 'darwin'){
       this.app.quit();
     }
