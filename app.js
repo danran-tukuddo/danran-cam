@@ -36,7 +36,8 @@ class App{
     //ブラウザ(Chromium)の起動, 初期画面のロード
     this.mainWindow = new electron.BrowserWindow({width: 800, height: 600});
     //this.mainWindow.maximize();
-    this.mainWindow.loadURL(config.FIREBASE_APP_URL);
+    //this.mainWindow.loadURL(config.FIREBASE_APP_URL);
+    this.mainWindow.loadURL("file://" + __dirname + "/public/app.html");
     this.mainWindow.on('closed', function(){
       console.log("closed");
       electron.session.defaultSession.clearCache(() => {});
