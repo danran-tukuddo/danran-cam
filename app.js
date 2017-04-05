@@ -1,12 +1,10 @@
 const electron = require('electron');
 const config = require("./config.js");
-const uv4l = require("./uv4l.js");
 
 class App{
   //コンストラクタ
   constructor(){
     console.log("constructor");
-    uv4l.config = config;
     this.app = electron.app;
     this.mainWindow = null;
   }
@@ -34,7 +32,7 @@ class App{
     console.log("ready");
     const _this = this;
     //ブラウザ(Chromium)の起動, 初期画面のロード
-    this.mainWindow = new electron.BrowserWindow({width: 800, height: 600});
+    this.mainWindow = new electron.BrowserWindow({width: 800, height: 600, center: true,"always-on-top": true});
     //this.mainWindow.maximize();
     this.mainWindow.loadURL(config.FIREBASE_APP_URL);
     this.mainWindow.on('closed', function(){
