@@ -13,7 +13,17 @@ class App{
     console.log("init");
     //全てのWindowが閉じられた時
     this.app.on('window-all-closed', this.windowAllClosed);
+    //ウィンドウ描画された時
     this.app.on('ready', this.ready);
+    //証明書エラー
+    this.app.on('certificate-error', this.certificateError);
+  }
+
+  //証明書エラー
+  certificateError(event, webContents, url, error, certificate, callback){
+    event.preventDefault();
+    //証明書エラーを無視
+    callback(true);
   }
 
   //全てのWindowが閉じられた時
