@@ -43,7 +43,7 @@ class App{
     const _this = this;
     //ブラウザ(Chromium)の起動, 初期画面のロード
     //QVGA 1280x960
-    this.mainWindow = new electron.BrowserWindow({width: 1280, height: 960, center: true,"always-on-top": true, kiosk: true, frame:false});
+    this.mainWindow = new electron.BrowserWindow({"always-on-top": true, kiosk: true, frame:false});
     this.mainWindow.maximize();
     this.mainWindow.setFullScreen(true);
     this.mainWindow.loadURL(config.FIREBASE_APP_URL);
