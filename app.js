@@ -47,8 +47,7 @@ class App{
     //XVGA 1024x768
     this.mainWindow = new electron.BrowserWindow({center: true,"always-on-top": true, kiosk: true, frame:false});
     //this.mainWindow = new electron.BrowserWindow({width:1024,height:768,center: true,"always-on-top": true});
-
-    this.mainWindow.maximize();
+    //this.mainWindow.maximize();
     this.mainWindow.setFullScreen(true);
     this.mainWindow.loadURL(config.FIREBASE_APP_URL);
     this.mainWindow.on('closed', function(){
