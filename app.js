@@ -45,7 +45,7 @@ class App{
     //ブラウザ(Chromium)の起動, 初期画面のロード
     //QVGA 1280x960
     //XVGA 1024x768
-    this.mainWindow = new electron.BrowserWindow({width:1024,height:768,center: true,"always-on-top": true, kiosk: true, frame:false, fullscreen: true});
+    this.mainWindow = new electron.BrowserWindow({width:1024,height:768,center: true,"always-on-top": true, kiosk: true, frame:false, fullscreen: true,useContentSize: true});
     //this.mainWindow = new electron.BrowserWindow({width:1024,height:768,center: true,"always-on-top": true});
     this.mainWindow.maximize();
     this.mainWindow.setFullScreen(true);
