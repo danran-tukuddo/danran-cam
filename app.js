@@ -15,6 +15,7 @@ class App{
     this.app.on('window-all-closed', this.windowAllClosed);
     //ウィンドウ描画された時
     this.app.on('ready', this.ready);
+
     //証明書エラー
     this.app.on('certificate-error', this.certificateError);
   }
@@ -44,8 +45,8 @@ class App{
     //ブラウザ(Chromium)の起動, 初期画面のロード
     //QVGA 1280x960
     //XVGA 1024x768
-    //this.mainWindow = new electron.BrowserWindow({center: true,"always-on-top": true, kiosk: true, frame:false});
-    this.mainWindow = new electron.BrowserWindow({width:1024,height:768,center: true,"always-on-top": true});
+    this.mainWindow = new electron.BrowserWindow({center: true,"always-on-top": true, kiosk: true, frame:false});
+    //this.mainWindow = new electron.BrowserWindow({width:1024,height:768,center: true,"always-on-top": true});
 
     this.mainWindow.maximize();
     this.mainWindow.setFullScreen(true);
